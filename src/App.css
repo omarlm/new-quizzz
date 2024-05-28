@@ -9,12 +9,13 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden; /* Evitar desplazamiento global */
 }
 
 .App {
     width: 90%;
     max-width: 600px;
-    margin: 20px;
+    margin: 0 auto; /* Centrado horizontal */
     padding: 20px;
     background: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -24,10 +25,13 @@ body {
     align-items: center;
     max-height: 80vh; /* Ajuste para no ocupar todo el alto */
     overflow-y: auto; /* Para permitir el desplazamiento si el contenido es demasiado largo */
+    box-sizing: border-box;
+    position: relative;
 }
 
 .App-header {
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .quiz {
@@ -40,11 +44,12 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
 }
 
 .question-count {
     margin-bottom: 10px;
-    font-weight: 500;
+    font-weight: bold; /* Negrita */
     font-size: 0.9em;
     text-align: left;
 }
@@ -60,6 +65,7 @@ body {
     display: flex;
     flex-direction: column;
     margin-top: auto;
+    width: 100%;
 }
 
 .answer-section button {
@@ -73,6 +79,8 @@ body {
     cursor: pointer;
     text-align: left; /* Justificado a la izquierda */
     transition: background-color 0.3s, transform 0.3s;
+    width: 100%; /* Asegurar que los botones llenen el contenedor */
+    box-sizing: border-box;
 }
 
 .answer-section button:hover {
@@ -133,9 +141,18 @@ body {
 }
 
 @media (max-width: 600px) {
+    body {
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
     .App {
-        margin: 10px;
+        width: 100%;
         padding: 15px;
+        max-height: 100vh;
+        justify-content: center;
+        overflow-y: auto;
+        box-sizing: border-box;
     }
 
     .question-text {

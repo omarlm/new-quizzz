@@ -91,7 +91,7 @@ const Quiz = () => {
                                     <p><strong>A:</strong> {question.options[answer.selectedAnswer]}</p>
                                     {!answer.isCorrect && (
                                         <>
-                                            <p><strong>Correct answer:</strong> {question.options[answer.correctAnswer]}</p>
+                                            <p><strong>Respuesta correcta:</strong> {question.options[answer.correctAnswer]}</p>
                                         </>
                                     )}
                                 </li>
